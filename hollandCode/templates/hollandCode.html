@@ -1,0 +1,2434 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>
+      Holland Code Personality Test
+    </title>
+    <!-- some bootstrap and shit -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- some custom shitstyle -->
+    <style>
+      .center {
+      margin: auto;
+      width: 50%;
+      border: 3px solid #26d9b5;
+      padding: 10px;
+      }
+      body {
+      background: url("https://images5.alphacoders.com/662/thumb-1920-662301.jpg") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      }
+      #footer {
+      position:absolute;
+      bottom:0;
+      width:100%;
+      background: transparent;
+      }
+      .transparent-style{
+      background: transparent;
+      color: white;
+      }
+      .white-background{
+      background: white;
+      }
+      .add-scroll{
+      height: 500px;
+      width: 100%;
+      overflow-y: scroll;
+      }
+      .fixed-image{
+      width: 300px;
+      height: 450px;
+      }
+      .color-font{
+      color:white;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.5);
+      }
+      .colorful-corner{
+      border-style: solid;
+      border-color: black;
+      }
+      .font-courier{
+      font-family: "Courier New";
+      }
+
+    </style>
+
+    <!-- some encryption shit -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+  </head>
+  <body>
+    <div class="container container-fluid">
+      <form class="pb-1">
+        <div class="form-row">
+          <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <label for="inputFirstName">First Name *</label>
+            <input type="text" class="form-control" id="inputFirstName" placeholder="Amagiri" required>
+          </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <label for="inputLastName">Last Name *</label>
+            <input type="text" class="form-control" id="inputLastName" placeholder="no Mikoto" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <label for="inputAge">Age *</label>
+            <input type="number" class="form-control" id="inputAge" placeholder="22" required>
+          </div>
+          <div class="form-group col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <label for="inputGender">Gender *</label>
+            <select id="inputGender" class="form-control">
+              <option selected>Male</option>
+              <option>Female</option>
+            </select>
+          </div>
+          <div class="form-group col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <label for="inputPS">Profession/Studies *</label>
+            <input type="text" class="form-control" id="inputPS" placeholder="Delivery" required>
+          </div>
+          <div class="form-group col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <label for="inputEmail">Email *</label>
+            <input type="text" class="form-control" id="inputEmail" placeholder="yatty@japan.co" required>
+          </div>
+        </div>
+      </form>
+      <div class="alert alert-info text-center" role="alert">
+        Rate the following questions with :
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-danger">No = 0</button>
+          <button type="button" class="btn btn-warning">Maybe = 1</button>
+        </div>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-secondary">Probably = 2</button>
+          <button type="button" class="btn btn-success">Yes = 3</button>
+        </div>
+      </div>
+      <form class="white-background">
+        <div class="row add-scroll">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <h2 class="font-courier">Are you... </h2>
+            <!-- practical -->
+            <h5>Practical</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="practical" id="practical0" value="0" checked>
+              <label class="form-check-label" for="practical0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="practical" id="practical1" value="1">
+              <label class="form-check-label" for="practical1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="practical" id="practical2" value="2">
+              <label class="form-check-label" for="practical2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="practical" id="practical3" value="3">
+              <label class="form-check-label" for="practical3">3</label>
+            </div>
+            <!-- athletic -->
+            <h5>Athletic</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR classR" type="radio" name="athletic" id="athletic0" value="0" checked>
+              <label class="form-check-label" for="athletic0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="athletic" id="athletic1" value="1">
+              <label class="form-check-label" for="athletic1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="athletic" id="athletic2" value="2">
+              <label class="form-check-label" for="athletic2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="athletic" id="athletic3" value="3">
+              <label class="form-check-label" for="athletic3">3</label>
+            </div>
+            <!-- straightforward -->
+            <h5>Straightfoward</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="straightforward" id="straightforward0" value="0" checked>
+              <label class="form-check-label" for="straightforward0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="straightforward" id="straightforward1" value="1">
+              <label class="form-check-label" for="straightforward1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="straightforward" id="straightforward2" value="2">
+              <label class="form-check-label" for="straightforward2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="straightforward" id="straightforward3" value="3">
+              <label class="form-check-label" for="straightforward3">3</label>
+            </div>
+            <!-- technically inclined -->
+            <h5>Technically inclined</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="technically" id="technically0" value="0" checked>
+              <label class="form-check-label" for="technically0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="technically" id="technically1" value="1">
+              <label class="form-check-label" for="technically1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="technically" id="technically2" value="2">
+              <label class="form-check-label" for="technically2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="technically" id="technically3" value="3">
+              <label class="form-check-label" for="technically3">3</label>
+            </div>
+            <!-- a nature lover -->
+            <h5>A nature lover</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="nature" id="nature0" value="0" checked>
+              <label class="form-check-label" for="nature0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="nature" id="nature1" value="1">
+              <label class="form-check-label" for="nature1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="nature" id="nature2" value="2">
+              <label class="form-check-label" for="nature2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="nature" id="nature3" value="3">
+              <label class="form-check-label" for="nature3">3</label>
+            </div>
+            <!-- obsessed with gagdgets -->
+            <h5>Obsessed with gadgets</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="gadget" id="gadget0" value="0" checked>
+              <label class="form-check-label" for="gadget0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="gadget" id="gadget1" value="1">
+              <label class="form-check-label" for="gadget1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="gadget" id="gadget2" value="2">
+              <label class="form-check-label" for="gadget2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="gadget" id="gadget3" value="3">
+              <label class="form-check-label" for="gadget3">3</label>
+            </div>
+            <!-- inquisitive -->
+            <h5>Inquisitve</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="inquisitive" id="inquisitive0" value="0" checked>
+              <label class="form-check-label" for="inquisitive0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="inquisitive" id="inquisitive1" value="1">
+              <label class="form-check-label" for="inquisitive1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="inquisitive" id="inquisitive2" value="2">
+              <label class="form-check-label" for="inquisitive2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="inquisitive" id="inquisitive3" value="3">
+              <label class="form-check-label" for="inquisitive3">3</label>
+            </div>
+            <!-- scientific -->
+            <h5>Scientific</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="scientific" id="scientific0" value="0" checked>
+              <label class="form-check-label" for="scientific0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="scientific" id="scientific1" value="1">
+              <label class="form-check-label" for="scientific1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="scientific" id="scientific2" value="2">
+              <label class="form-check-label" for="scientific2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="scientific" id="scientific3" value="3">
+              <label class="form-check-label" for="scientific3">3</label>
+            </div>
+            <!-- observant -->
+            <h5>Observant</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="observant" id="observant0" value="0" checked>
+              <label class="form-check-label" for="observant0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="observant" id="observant1" value="1">
+              <label class="form-check-label" for="observant1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="observant" id="observant2" value="2">
+              <label class="form-check-label" for="observant2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="observant" id="observant3" value="3">
+              <label class="form-check-label" for="observant3">3</label>
+            </div>
+            <!-- logical -->
+            <h5>Logical</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="logical" id="logical0" value="0" checked>
+              <label class="form-check-label" for="logical0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="logical" id="logical1" value="1">
+              <label class="form-check-label" for="logical1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="logical" id="logical2" value="2">
+              <label class="form-check-label" for="logical2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="logical" id="logical3" value="3">
+              <label class="form-check-label" for="logical3">3</label>
+            </div>
+            <!-- critical thinker -->
+            <h5>A critical thinker</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="critical" id="critical0" value="0" checked>
+              <label class="form-check-label" for="critical0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="critical" id="critical1" value="1">
+              <label class="form-check-label" for="critical1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="critical" id="critical2" value="2">
+              <label class="form-check-label" for="critical2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="critical" id="critical3" value="3">
+              <label class="form-check-label" for="critical3">3</label>
+            </div>
+            <!-- analytical -->
+            <h5>An analytical</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="analytical" id="analytical0" value="0" checked>
+              <label class="form-check-label" for="analytical0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="analytical" id="analytical1" value="1">
+              <label class="form-check-label" for="analytical1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="analytical" id="analytical2" value="2">
+              <label class="form-check-label" for="analytical2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="analytical" id="analytical3" value="3">
+              <label class="form-check-label" for="analytical3">3</label>
+            </div>
+            <!-- creative -->
+            <h5>Creative</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="creative" id="creative0" value="0" checked>
+              <label class="form-check-label" for="creative0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="creative" id="creative1" value="1">
+              <label class="form-check-label" for="creative1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="creative" id="creative2" value="2">
+              <label class="form-check-label" for="creative2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="creative" id="creative3" value="3">
+              <label class="form-check-label" for="creative3">3</label>
+            </div>
+            <!-- intuitive -->
+            <h5>Intuitive</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="intuitive" id="intuitive0" value="0" checked>
+              <label class="form-check-label" for="intuitive0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="intuitive" id="intuitive1" value="1">
+              <label class="form-check-label" for="intuitive1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="intuitive" id="intuitive2" value="2">
+              <label class="form-check-label" for="intuitive2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="intuitive" id="intuitive3" value="3">
+              <label class="form-check-label" for="intuitive3">3</label>
+            </div>
+            <!-- imaginative -->
+            <h5>Imaginative</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="imaginative" id="imaginative0" value="0" checked>
+              <label class="form-check-label" for="imaginative0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="imaginative" id="imaginative1" value="1">
+              <label class="form-check-label" for="imaginative1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="imaginative" id="imaginative2" value="2">
+              <label class="form-check-label" for="imaginative2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="imaginative" id="imaginative3" value="3">
+              <label class="form-check-label" for="imaginative3">3</label>
+            </div>
+            <!-- innovative -->
+            <h5>Innovative</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="innovative" id="innovative0" value="0" checked>
+              <label class="form-check-label" for="innovative0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="innovative" id="innovative1" value="1">
+              <label class="form-check-label" for="innovative1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="innovative" id="innovative2" value="2">
+              <label class="form-check-label" for="innovative2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="innovative" id="innovative3" value="3">
+              <label class="form-check-label" for="innovative3">3</label>
+            </div>
+            <!-- idealistic -->
+            <h5>Idealistic</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="idealistic" id="idealistic0" value="0" checked>
+              <label class="form-check-label" for="idealistic0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="idealistic" id="idealistic1" value="1">
+              <label class="form-check-label" for="idealistic1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="idealistic" id="idealistic2" value="2">
+              <label class="form-check-label" for="idealistic2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="idealistic" id="idealistic3" value="3">
+              <label class="form-check-label" for="idealistic3">3</label>
+            </div>
+            <!-- expressive -->
+            <h5>Expressive</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="expressive" id="expressive0" value="0" checked>
+              <label class="form-check-label" for="expressive0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="expressive" id="expressive1" value="1">
+              <label class="form-check-label" for="expressive1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="expressive" id="expressive2" value="2">
+              <label class="form-check-label" for="expressive2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="expressive" id="expressive3" value="3">
+              <label class="form-check-label" for="expressive3">3</label>
+            </div>
+            <!-- friendly -->
+            <h5>Friendly</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="friendly" id="friendly0" value="0" checked>
+              <label class="form-check-label" for="friendly0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="friendly" id="friendly1" value="1">
+              <label class="form-check-label" for="friendly1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="friendly" id="friendly2" value="2">
+              <label class="form-check-label" for="friendly2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="friendly" id="friendly3" value="">
+              <label class="form-check-label" for="friendly3">3</label>
+            </div>
+            <!-- helpful -->
+            <h5>Helpful</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="helpful" id="helpful0" value="0" checked>
+              <label class="form-check-label" for="helpful0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="helpful" id="helpful1" value="1">
+              <label class="form-check-label" for="helpful1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="helpful" id="helpful2" value="2">
+              <label class="form-check-label" for="helpful2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="helpful" id="helpful3" value="3">
+              <label class="form-check-label" for="helpful3">3</label>
+            </div>
+            <!-- empathetic -->
+            <h5>Empathetic</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="empathetic" id="empathetic0" value="0" checked>
+              <label class="form-check-label" for="empathetic0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="empathetic" id="empathetic1" value="1">
+              <label class="form-check-label" for="empathetic1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="empathetic" id="empathetic2" value="2">
+              <label class="form-check-label" for="empathetic2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="empathetic" id="empathetic3" value="3">
+              <label class="form-check-label" for="empathetic3">3</label>
+            </div>
+            <!-- insightful about people -->
+            <h5>Insightful about people</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="insightful" id="insightful0" value="0" checked>
+              <label class="form-check-label" for="insightful0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="insightful" id="insightful1" value="1">
+              <label class="form-check-label" for="insightful1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="insightful" id="insightful2" value="2">
+              <label class="form-check-label" for="insightful2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="insightful" id="insightful3" value="3">
+              <label class="form-check-label" for="insightful3">3</label>
+            </div>
+            <!-- outgoing with others -->
+            <h5>Outgoing with others</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="outgoing" id="outgoing0" value="0" checked>
+              <label class="form-check-label" for="outgoing0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="outgoing" id="outgoing1" value="1">
+              <label class="form-check-label" for="outgoing1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="outgoing" id="outgoing2" value="2">
+              <label class="form-check-label" for="outgoing2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="outgoing" id="outgoing3" value="3">
+              <label class="form-check-label" for="outgoing3">3</label>
+            </div>
+            <!-- understanding -->
+            <h5>Understanding</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="understanding" id="understanding0" value="0" checked>
+              <label class="form-check-label" for="understanding0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="understanding" id="understanding1" value="1">
+              <label class="form-check-label" for="understanding1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="understanding" id="understanding2" value="2">
+              <label class="form-check-label" for="understanding2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="understanding" id="understanding3" value="3">
+              <label class="form-check-label" for="understanding3">3</label>
+            </div>
+            <!-- self-confident -->
+            <h5>Self-confident</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="confident" id="confident0" value="0" checked>
+              <label class="form-check-label" for="confident0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="confident" id="confident1" value="1">
+              <label class="form-check-label" for="confident1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="confident" id="confident2" value="2">
+              <label class="form-check-label" for="confident2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="confident" id="confident3" value="3">
+              <label class="form-check-label" for="confident3">3</label>
+            </div>
+            <!-- optimistic -->
+            <h5>Optimistic</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="optimistic" id="optimistic0" value="0" checked>
+              <label class="form-check-label" for="optimistic0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="optimistic" id="optimistic1" value="1">
+              <label class="form-check-label" for="optimistic1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="optimistic" id="optimistic2" value="2">
+              <label class="form-check-label" for="optimistic2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="optimistic" id="optimistic3" value="3">
+              <label class="form-check-label" for="optimistic3">3</label>
+            </div>
+            <!-- influencing -->
+            <h5>Influencing</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="influencing" id="influencing0" value="0" checked>
+              <label class="form-check-label" for="influencing0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="influencing" id="influencing1" value="1">
+              <label class="form-check-label" for="influencing">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="influencing" id="influencing2" value="2">
+              <label class="form-check-label" for="influencing2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="influencing" id="influencing3" value="3">
+              <label class="form-check-label" for="influencing3">3</label>
+            </div>
+            <!-- persuasive -->
+            <h5>Persuasive</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="persuasive" id="persuasive0" value="0" checked>
+              <label class="form-check-label" for="persuasive0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="persuasive" id="persuasive1" value="1">
+              <label class="form-check-label" for="persuasive1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="persuasive" id="persuasive2" value="2">
+              <label class="form-check-label" for="persuasive2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="persuasive" id="persuasive3" value="3">
+              <label class="form-check-label" for="persuasive3">3</label>
+            </div>
+            <!-- enthusiastic -->
+            <h5>Enthusiastic</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="enthusiastic" id="enthusiastic0" value="0" checked>
+              <label class="form-check-label" for="enthusiastic0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="enthusiastic" id="enthusiastic1" value="1">
+              <label class="form-check-label" for="enthusiastic1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="enthusiastic" id="enthusiastic2" value="2">
+              <label class="form-check-label" for="enthusiastic2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="enthusiastic" id="enthusiastic3" value="3">
+              <label class="form-check-label" for="enthusiastic3">3</label>
+            </div>
+            <!-- energetic -->
+            <h5>Energetic</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="energetic" id="energetic0" value="0" checked>
+              <label class="form-check-label" for="energetic0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="energetic" id="energetic1" value="1">
+              <label class="form-check-label" for="energetic1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="energetic" id="energetic2" value="2">
+              <label class="form-check-label" for="energetic2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="energetic" id="energetic3" value="3">
+              <label class="form-check-label" for="energetic3">3</label>
+            </div>
+            <!-- well organized -->
+            <h5>Well organized</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="organized" id="organized0" value="0" checked>
+              <label class="form-check-label" for="organized0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="organized" id="organized1" value="1">
+              <label class="form-check-label" for="organized1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="organized" id="organized2" value="2">
+              <label class="form-check-label" for="organized2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="organized" id="organized3" value="3">
+              <label class="form-check-label" for="organized3">3</label>
+            </div>
+            <!-- systematic -->
+            <h5>Systematic</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="systematic" id="systematic0" value="0" checked>
+              <label class="form-check-label" for="systematic0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="systematic" id="systematic1" value="1">
+              <label class="form-check-label" for="systematic1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="systematic" id="systematic2" value="2">
+              <label class="form-check-label" for="systematic2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="systematic" id="systematic3" value="3">
+              <label class="form-check-label" for="systematic3">3</label>
+            </div>
+            <!-- methodical -->
+            <h5>Methodical</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="methodical" id="methodical0" value="0" checked>
+              <label class="form-check-label" for="methodical0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="methodical" id="methodical1" value="1">
+              <label class="form-check-label" for="methodical1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="methodical" id="methodical2" value="2">
+              <label class="form-check-label" for="methodical2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="methodical" id="methodical3" value="3">
+              <label class="form-check-label" for="methodical3">3</label>
+            </div>
+            <!-- interested in statistic -->
+            <h5>Interested in statistic</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="statistic" id="statistic0" value="0" checked>
+              <label class="form-check-label" for="statistic0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="statistic" id="statistic1" value="1">
+              <label class="form-check-label" for="statistic1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="statistic" id="statistic2" value="2">
+              <label class="form-check-label" for="statistic2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="statistic" id="statistic3" value="3">
+              <label class="form-check-label" for="statistic3">3</label>
+            </div>
+            <!-- a scheduled person -->
+            <h5>A scheduled person</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="scheduled" id="scheduled0" value="0" checked>
+              <label class="form-check-label" for="scheduled0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="scheduled" id="scheduled1" value="1">
+              <label class="form-check-label" for="scheduled1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="scheduled" id="scheduled2" value="2">
+              <label class="form-check-label" for="scheduled2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="scheduled" id="scheduled3" value="3">
+              <label class="form-check-label" for="scheduled3">3</label>
+            </div>
+            <!-- efficient in structured work -->
+            <h5>Efficient in structured work</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="structured" id="structured0" value="0" checked>
+              <label class="form-check-label" for="structured0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="structured" id="structured1" value="1">
+              <label class="form-check-label" for="structured1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="structured" id="structured2" value="2">
+              <label class="form-check-label" for="structured2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="structured" id="structured3" value="3">
+              <label class="form-check-label" for="structured3">3</label>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <h2 class="font-courier">Do you like to... </h2>
+            <!-- use mobile phones -->
+            <h5>Use mobile phones</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="mobile" id="mobile0" value="0" checked>
+              <label class="form-check-label" for="mobile0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="mobile" id="mobile1" value="1">
+              <label class="form-check-label" for="mobile1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="mobile" id="mobile2" value="2">
+              <label class="form-check-label" for="mobile2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="mobile" id="mobile3" value="3">
+              <label class="form-check-label" for="mobile3">3</label>
+            </div>
+            <!-- stay outdoors -->
+            <h5>Stay outdoors</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="outdoors" id="outdoors0" value="0" checked>
+              <label class="form-check-label" for="outdoors0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="outdoors" id="outdoors1" value="1">
+              <label class="form-check-label" for="outdoors1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="outdoors" id="outdoors2" value="2">
+              <label class="form-check-label" for="outdoors2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="outdoors" id="outdoors3" value="3">
+              <label class="form-check-label" for="outdoors3">3</label>
+            </div>
+            <!-- be active in sports -->
+            <h5>Be active in sports</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="sports" id="sports0" value="0" checked>
+              <label class="form-check-label" for="sports0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="sports" id="sports1" value="1">
+              <label class="form-check-label" for="sports1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="sports" id="sports2" value="2">
+              <label class="form-check-label" for="sports2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="sports" id="sports3" value="3">
+              <label class="form-check-label" for="sports3">3</label>
+            </div>
+            <!-- have pets -->
+            <h5>Have pets</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="pets" id="pets0" value="0" checked>
+              <label class="form-check-label" for="pets0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="pets" id="pets1" value="1">
+              <label class="form-check-label" for="pets1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="pets" id="pets2" value="2">
+              <label class="form-check-label" for="pets2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="pets" id="pets3" value="3">
+              <label class="form-check-label" for="pets3">3</label>
+            </div>
+            <!-- build up things -->
+            <h5>Build up things</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="build" id="build0" value="0" checked>
+              <label class="form-check-label" for="build0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="build" id="build1" value="1">
+              <label class="form-check-label" for="build1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="build" id="build2" value="2">
+              <label class="form-check-label" for="build2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="build" id="build3" value="3">
+              <label class="form-check-label" for="build3">3</label>
+            </div>
+            <!-- Work using vehicles -->
+            <h5>Work using vehicles</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="vehicles" id="vehicles0" value="0" checked>
+              <label class="form-check-label" for="vehicles0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="vehicles" id="vehicles1" value="1">
+              <label class="form-check-label" for="vehicles1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="vehicles" id="vehicles2" value="2">
+              <label class="form-check-label" for="vehicles2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="vehicles" id="vehicles3" value="3">
+              <label class="form-check-label" for="vehicles3">3</label>
+            </div>
+            <!-- explore ideas -->
+            <h5>Explore ideas</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="ideas" id="ideas0" value="0" checked>
+              <label class="form-check-label" for="ideas0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="ideas" id="ideas1" value="1">
+              <label class="form-check-label" for="ideas1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="ideas" id="ideas2" value="2">
+              <label class="form-check-label" for="ideas2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="ideas" id="ideas3" value="3">
+              <label class="form-check-label" for="ideas3">3</label>
+            </div>
+            <!-- watch research videos -->
+            <h5>Watch research videos</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="research" id="research0" value="0" checked>
+              <label class="form-check-label" for="research0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="research" id="research1" value="1">
+              <label class="form-check-label" for="research1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="research" id="research2" value="2">
+              <label class="form-check-label" for="research2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="research" id="research3" value="3">
+              <label class="form-check-label" for="research3">3</label>
+            </div>
+            <!-- work independently -->
+            <h5>Work independently</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="independently" id="independently0" value="0" checked>
+              <label class="form-check-label" for="independently0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="independently" id="independently1" value="1">
+              <label class="form-check-label" for="independently1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="independently" id="independently2" value="2">
+              <label class="form-check-label" for="independently2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="independently" id="independently3" value="3">
+              <label class="form-check-label" for="independently3">3</label>
+            </div>
+            <!-- Study in depth of certain topics -->
+            <h5>Study in depth of certain topics</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="depth" id="depth0" value="0" checked>
+              <label class="form-check-label" for="depth0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="depth" id="depth1" value="1">
+              <label class="form-check-label" for="depth1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="depth" id="depth2" value="2">
+              <label class="form-check-label" for="depth2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="depth" id="depth3" value="3">
+              <label class="form-check-label" for="depth3">3</label>
+            </div>
+            <!-- read erudite magazines -->
+            <h5>Read erudite magazines</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="erudite" id="erudite0" value="0" checked>
+              <label class="form-check-label" for="erudite0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="erudite" id="erudite1" value="1">
+              <label class="form-check-label" for="erudite1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="erudite" id="erudite2" value="2">
+              <label class="form-check-label" for="erudite2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="erudite" id="erudite3" value="3">
+              <label class="form-check-label" for="erudite3">3</label>
+            </div>
+            <!-- validate theories -->
+            <h5>Validate theories</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="theories" id="theories0" value="0" checked>
+              <label class="form-check-label" for="theories0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="theories" id="theories1" value="1">
+              <label class="form-check-label" for="theories1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="theories" id="theories2" value="2">
+              <label class="form-check-label" for="theories2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="theories" id="theories3" value="3">
+              <label class="form-check-label" for="theories3">3</label>
+            </div>
+            <!-- find new ways of doing things -->
+            <h5>Find new ways of doing things</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="new" id="new0" value="0" checked>
+              <label class="form-check-label" for="new0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="creative" id="new1" value="1">
+              <label class="form-check-label" for="new1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="creative" id="new2" value="2">
+              <label class="form-check-label" for="new2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="creative" id="new3" value="3">
+              <label class="form-check-label" for="new3">3</label>
+            </div>
+            <!-- read fiction, plays or poems -->
+            <h5>Read fiction, plays or poems</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="poems" id="poems0" value="0" checked>
+              <label class="form-check-label" for="intuitive0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="poems" id="poems1" value="1">
+              <label class="form-check-label" for="intuitive1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="poems" id="poems2" value="2">
+              <label class="form-check-label" for="intuitive2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="poems" id="poems3" value="3">
+              <label class="form-check-label" for="intuitive3">3</label>
+            </div>
+            <!-- use different words to explain -->
+            <h5>Use different words to explain</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="different" id="different0" value="0" checked>
+              <label class="form-check-label" for="imaginative0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="different" id="different1" value="1">
+              <label class="form-check-label" for="imaginative1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="different" id="different2" value="2">
+              <label class="form-check-label" for="imaginative2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="imaginative" id="different3" value="3">
+              <label class="form-check-label" for="different3">3</label>
+            </div>
+            <!-- have beautiful photographs -->
+            <h5>Have beautiful photographs</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="photographs" id="photographs0" value="0" checked>
+              <label class="form-check-label" for="innovative0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="photographs" id="photographs1" value="1">
+              <label class="form-check-label" for="innovative1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="photographs" id="photographs2" value="2">
+              <label class="form-check-label" for="innovative2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="innovative" id="photograph3" value="3">
+              <label class="form-check-label" for="photograph3">3</label>
+            </div>
+            <!-- use intuition in our work -->
+            <h5>Use intuition in your work</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="intuition" id="intuition0" value="0" checked>
+              <label class="form-check-label" for="idealistic0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="intuition" id="intuition1" value="1">
+              <label class="form-check-label" for="idealistic1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="intuition" id="intuition2" value="2">
+              <label class="form-check-label" for="idealistic2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="intuition" id="intuition3" value="3">
+              <label class="form-check-label" for="idealistic3">3</label>
+            </div>
+            <!-- present comething creative -->
+            <h5>Present something creative</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="present" id="present0" value="0" checked>
+              <label class="form-check-label" for="expressive0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="present" id="present1" value="1">
+              <label class="form-check-label" for="expressive1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="present" id="present2" value="2">
+              <label class="form-check-label" for="expressive2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="present" id="present3" value="3">
+              <label class="form-check-label" for="expressive3">3</label>
+            </div>
+            <!-- use social and soft skills -->
+            <h5>Use social and soft skills</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="social" id="social0" value="0" checked>
+              <label class="form-check-label" for="friendly0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="social" id="social1" value="1">
+              <label class="form-check-label" for="friendly1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="social" id="social2" value="2">
+              <label class="form-check-label" for="friendly2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="social" id="social3" value="">
+              <label class="form-check-label" for="friendly3">3</label>
+            </div>
+            <!-- join a group discussion -->
+            <h5>Join a group discussion</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="discussion" id="discussion0" value="0" checked>
+              <label class="form-check-label" for="helpful0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="discussion" id="discussion1" value="1">
+              <label class="form-check-label" for="helpful1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="discussion" id="discussion2" value="2">
+              <label class="form-check-label" for="helpful2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="discussion" id="discussion3" value="3">
+              <label class="form-check-label" for="helpful3">3</label>
+            </div>
+            <!-- do volunteer works -->
+            <h5>Do volunteer works</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="volunteer" id="volunteer0" value="0" checked>
+              <label class="form-check-label" for="empathetic0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="volunteer" id="volunteer1" value="1">
+              <label class="form-check-label" for="empathetic1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="volunteer" id="volunteer2" value="2">
+              <label class="form-check-label" for="empathetic2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="volunteer" id="volunteer3" value="3">
+              <label class="form-check-label" for="empathetic3">3</label>
+            </div>
+            <!-- meet new people -->
+            <h5>Meet new people</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="meet" id="meet0" value="0" checked>
+              <label class="form-check-label" for="meet0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="meet" id="meet1" value="1">
+              <label class="form-check-label" for="meet1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="meet" id="meet2" value="2">
+              <label class="form-check-label" for="meet2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="meet" id="meet3" value="3">
+              <label class="form-check-label" for="meet3">3</label>
+            </div>
+            <!-- to be helped by other -->
+            <h5>To be helped by others</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="helped" id="helped0" value="0" checked>
+              <label class="form-check-label" for="helped0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="helped" id="helped1" value="1">
+              <label class="form-check-label" for="helped1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="helped" id="helped2" value="2">
+              <label class="form-check-label" for="helped2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="helped" id="helped3" value="3">
+              <label class="form-check-label" for="helped3">3</label>
+            </div>
+            <!-- provide support or assistance -->
+            <h5>Provide support or assistance</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="assistance" id="assistance0" value="0" checked>
+              <label class="form-check-label" for="assistance0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="assistance" id="assistance1" value="1">
+              <label class="form-check-label" for="assistance1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="assistance" id="assistance2" value="2">
+              <label class="form-check-label" for="assistance2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="assistance" id="assistance3" value="3">
+              <label class="form-check-label" for="assistance3">3</label>
+            </div>
+            <!-- make decision affecting others -->
+            <h5>Make decision affecting others</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="affecting" id="affecting0" value="0" checked>
+              <label class="form-check-label" for="affecting0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="affecting" id="affecting1" value="1">
+              <label class="form-check-label" for="affecting1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="affecting" id="affecting2" value="2">
+              <label class="form-check-label" for="affecting2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="affecting" id="affecting3" value="3">
+              <label class="form-check-label" for="affecting3">3</label>
+            </div>
+            <!-- propose your ideas and plans -->
+            <h5>Propose your ideas and plans</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="propose" id="propose0" value="0" checked>
+              <label class="form-check-label" for="propose0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="propose" id="propose1" value="1">
+              <label class="form-check-label" for="propose1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="propose" id="propose2" value="2">
+              <label class="form-check-label" for="propose2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="propose" id="propose3" value="3">
+              <label class="form-check-label" for="propose3">3</label>
+            </div>
+            <!-- fully utilise your energy -->
+            <h5>Fully utilise your energy</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="utilise" id="utilise0" value="0" checked>
+              <label class="form-check-label" for="utilise0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="utilise" id="utilise1" value="1">
+              <label class="form-check-label" for="utilise">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="utilise" id="utilise2" value="2">
+              <label class="form-check-label" for="utilise2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="utilise" id="utilise3" value="3">
+              <label class="form-check-label" for="utilise3">3</label>
+            </div>
+            <!-- give your points in a discussion -->
+            <h5>Give your points in a discussion</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="points" id="points0" value="0" checked>
+              <label class="form-check-label" for="points0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="points" id="points1" value="1">
+              <label class="form-check-label" for="points1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="points" id="points2" value="2">
+              <label class="form-check-label" for="points2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="points" id="points3" value="3">
+              <label class="form-check-label" for="points3">3</label>
+            </div>
+            <!-- acknowledge about politics -->
+            <h5>Acknowledge about politics</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="politics" id="politics0" value="0" checked>
+              <label class="form-check-label" for="politics0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="politics" id="politics1" value="1">
+              <label class="form-check-label" for="politics1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="politics" id="politics2" value="2">
+              <label class="form-check-label" for="politics2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="politics" id="politics3" value="3">
+              <label class="form-check-label" for="politics3">3</label>
+            </div>
+            <!-- make bussiness -->
+            <h5>Make bussiness</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="bussiness" id="bussiness0" value="0" checked>
+              <label class="form-check-label" for="bussiness0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="bussiness" id="bussiness1" value="1">
+              <label class="form-check-label" for="bussiness1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="bussiness" id="bussiness2" value="2">
+              <label class="form-check-label" for="bussiness2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="bussiness" id="bussiness3" value="3">
+              <label class="form-check-label" for="bussiness3">3</label>
+            </div>
+            <!-- jot down briefings or meetings -->
+            <h5>Jot down briefings or meetings</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="briefings" id="briefings0" value="0" checked>
+              <label class="form-check-label" for="briefings0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="briefings" id="briefings1" value="1">
+              <label class="form-check-label" for="briefings1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="briefings" id="briefings2" value="2">
+              <label class="form-check-label" for="briefings2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="briefings" id="briefings3" value="3">
+              <label class="form-check-label" for="briefings3">3</label>
+            </div>
+            <!-- make graphs, charts or tables -->
+            <h5>Make graphs, charts or tables</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="charts" id="charts0" value="0" checked>
+              <label class="form-check-label" for="charts0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="charts" id="charts1" value="1">
+              <label class="form-check-label" for="charts1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="charts" id="charts2" value="2">
+              <label class="form-check-label" for="charts2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="charts" id="charts3" value="3">
+              <label class="form-check-label" for="charts3">3</label>
+            </div>
+            <!-- follow Standard of Procedure -->
+            <h5>Follow Standard of Procedure</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="standard" id="standard0" value="0" checked>
+              <label class="form-check-label" for="standard0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="standard" id="standard1" value="1">
+              <label class="form-check-label" for="standard1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="standard" id="standard2" value="2">
+              <label class="form-check-label" for="standard2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="standard" id="standard3" value="3">
+              <label class="form-check-label" for="standard3">3</label>
+            </div>
+            <!-- do Microsoft Office works -->
+            <h5>Do Microsoft Office works</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="microsoft" id="microsoft0" value="0" checked>
+              <label class="form-check-label" for="microsoft0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="microsoft" id="microsoft1" value="1">
+              <label class="form-check-label" for="microsoft1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="microsoft" id="microsoft2" value="2">
+              <label class="form-check-label" for="microsoft2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="microsoft" id="microsoft3" value="3">
+              <label class="form-check-label" for="microsoft3">3</label>
+            </div>
+            <!-- be responsible for details -->
+            <h5>Be responsible for details</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="details" id="details0" value="0" checked>
+              <label class="form-check-label" for="details0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="details" id="details1" value="1">
+              <label class="form-check-label" for="details1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="details" id="details2" value="2">
+              <label class="form-check-label" for="details2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="details" id="details3" value="3">
+              <label class="form-check-label" for="details3">3</label>
+            </div>
+            <!-- track work progress -->
+            <h5>Track work progress</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="progress" id="progress0" value="0" checked>
+              <label class="form-check-label" for="progress0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="progress" id="progress1" value="1">
+              <label class="form-check-label" for="progress1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="progress" id="progress2" value="2">
+              <label class="form-check-label" for="progress2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="progress" id="progress3" value="3">
+              <label class="form-check-label" for="progress3">3</label>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <h2 class="font-courier">Can you... </h2>
+            <!-- fix electrical or electronic things -->
+            <h5>Fix electrical or electronic things</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="electronic" id="electronic0" value="0" checked>
+              <label class="form-check-label" for="electronic0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="electronic" id="electronic1" value="1">
+              <label class="form-check-label" for="electronic1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="electronic" id="electronic2" value="2">
+              <label class="form-check-label" for="electronic2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="electronic" id="electronic3" value="3">
+              <label class="form-check-label" for="electronic3">3</label>
+            </div>
+            <!-- do heavy physical work -->
+            <h5>Do heavy physical work</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="physical" id="physical0" value="0" checked>
+              <label class="form-check-label" for="physical0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="physical" id="physical1" value="1">
+              <label class="form-check-label" for="physical1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="physical" id="physical2" value="2">
+              <label class="form-check-label" for="physical2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="physical" id="physical3" value="3">
+              <label class="form-check-label" for="physical3">3</label>
+            </div>
+            <!-- set up tents, barns or yards -->
+            <h5>Set up tents, barns or yards</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="yards" id="yards0" value="0" checked>
+              <label class="form-check-label" for="yards0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="yards" id="yards1" value="1">
+              <label class="form-check-label" for="yards1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="yards" id="yards2" value="2">
+              <label class="form-check-label" for="yards2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="yards" id="yards3" value="3">
+              <label class="form-check-label" for="yards3">3</label>
+            </div>
+            <!-- play sports very well -->
+            <h5>Play sports very well</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="play" id="play0" value="0" checked>
+              <label class="form-check-label" for="play0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="play" id="play1" value="1">
+              <label class="form-check-label" for="play1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="play" id="play2" value="2">
+              <label class="form-check-label" for="play2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="play" id="play3" value="3">
+              <label class="form-check-label" for="play3">3</label>
+            </div>
+            <!-- operate tools and equipment -->
+            <h5>Operate tools and equipment</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="equipment" id="equipment0" value="0" checked>
+              <label class="form-check-label" for="equipment0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="equipment" id="equipment1" value="1">
+              <label class="form-check-label" for="equipment1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="equipment" id="equipment2" value="2">
+              <label class="form-check-label" for="equipment2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="equipment" id="equipment3" value="3">
+              <label class="form-check-label" for="equipment3">3</label>
+            </div>
+            <!-- explain an architecture model -->
+            <h5>Explain an architecture model</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="architecture" id="architecture0" value="0" checked>
+              <label class="form-check-label" for="architecture0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="architecture" id="architecture1" value="1">
+              <label class="form-check-label" for="architecture1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="architecture" id="architecture2" value="2">
+              <label class="form-check-label" for="architecture2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classR" type="radio" name="architecture" id="architecture3" value="3">
+              <label class="form-check-label" for="architecture3">3</label>
+            </div>
+            <!-- digest critical case study -->
+            <h5>Digest critical case study</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="digest" id="digest0" value="0" checked>
+              <label class="form-check-label" for="digest0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="digest" id="digest1" value="1">
+              <label class="form-check-label" for="digest1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="digest" id="digest2" value="2">
+              <label class="form-check-label" for="digest2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="digest" id="digest3" value="3">
+              <label class="form-check-label" for="digest3">3</label>
+            </div>
+            <!-- brainstorm mixed of ideas -->
+            <h5>Brainstorm mixed of ideas</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="brainstorm" id="brainstorm0" value="0" checked>
+              <label class="form-check-label" for="brainstorm0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="brainstorm" id="brainstorm1" value="1">
+              <label class="form-check-label" for="brainstorm1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="brainstorm" id="brainstorm2" value="2">
+              <label class="form-check-label" for="brainstorm2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="brainstorm" id="brainstorm3" value="3">
+              <label class="form-check-label" for="brainstorm3">3</label>
+            </div>
+            <!-- do complex calculations -->
+            <h5>Do complex calculations</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="complex" id="complex0" value="0" checked>
+              <label class="form-check-label" for="complex0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="complex" id="complex1" value="1">
+              <label class="form-check-label" for="complex1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="complex" id="complex2" value="2">
+              <label class="form-check-label" for="complex2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="complex" id="complex3" value="3">
+              <label class="form-check-label" for="complex3">3</label>
+            </div>
+            <!-- predict future scenarios -->
+            <h5>Predict future scenarios</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="future" id="future0" value="0" checked>
+              <label class="form-check-label" for="future0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="future" id="future1" value="1">
+              <label class="form-check-label" for="future1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="future" id="future2" value="2">
+              <label class="form-check-label" for="future2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="future" id="future3" value="3">
+              <label class="form-check-label" for="future3">3</label>
+            </div>
+            <!-- solve crucial problems -->
+            <h5>Solve crucial problems</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="crucial" id="crucial0" value="0" checked>
+              <label class="form-check-label" for="crucial0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="crucial" id="crucial1" value="1">
+              <label class="form-check-label" for="crucial1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="crucial" id="crucial2" value="2">
+              <label class="form-check-label" for="crucial2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="crucial" id="crucial3" value="3">
+              <label class="form-check-label" for="crucial3">3</label>
+            </div>
+            <!-- interpret formulas -->
+            <h5>Interpret formulas</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="interpret" id="interpret0" value="0" checked>
+              <label class="form-check-label" for="interpret0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="interpret" id="interpret1" value="1">
+              <label class="form-check-label" for="interpret1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="interpret" id="interpret2" value="2">
+              <label class="form-check-label" for="interpret2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classI" type="radio" name="interpret" id="interpret3" value="3">
+              <label class="form-check-label" for="interpret3">3</label>
+            </div>
+            <!-- sketch, draw or paint -->
+            <h5>Sketch, draw or paint</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="paint" id="paint0" value="0" checked>
+              <label class="form-check-label" for="paint0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="paint" id="paint1" value="1">
+              <label class="form-check-label" for="paint1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="paint" id="paint2" value="2">
+              <label class="form-check-label" for="paint2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="paint" id="paint3" value="3">
+              <label class="form-check-label" for="paint3">3</label>
+            </div>
+            <!-- use visualtization abilities -->
+            <h5>Use visualtization abilities</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="visualtization" id="visualtization0" value="0" checked>
+              <label class="form-check-label" for="visualtization0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="visualtization" id="visualtization1" value="1">
+              <label class="form-check-label" for="visualtization1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="visualtization" id="visualtization2" value="2">
+              <label class="form-check-label" for="visualtization2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="visualtization" id="visualtization3" value="3">
+              <label class="form-check-label" for="visualtization3">3</label>
+            </div>
+            <!-- play musical instruments -->
+            <h5>Play musical instruments</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="instruments" id="instruments0" value="0" checked>
+              <label class="form-check-label" for="instruments0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="instruments" id="instruments1" value="1">
+              <label class="form-check-label" for="instruments1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="instruments" id="instruments2" value="2">
+              <label class="form-check-label" for="instruments2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="instruments" id="instruments3" value="3">
+              <label class="form-check-label" for="instruments3">3</label>
+            </div>
+            <!-- write stories, poetry or music -->
+            <h5>Write stories, poetry or music</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="stories" id="stories0" value="0" checked>
+              <label class="form-check-label" for="stories0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="stories" id="stories1" value="1">
+              <label class="form-check-label" for="stories1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="stories" id="stories2" value="2">
+              <label class="form-check-label" for="stories2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="stories" id="stories3" value="3">
+              <label class="form-check-label" for="stories3">3</label>
+            </div>
+            <!-- suggest new ideas -->
+            <h5>Suggest new ideas</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="suggest" id="suggest0" value="0" checked>
+              <label class="form-check-label" for="suggest0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="suggest" id="suggest1" value="1">
+              <label class="form-check-label" for="suggest1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="suggest" id="suggest2" value="2">
+              <label class="form-check-label" for="suggest2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="suggest" id="suggest3" value="3">
+              <label class="form-check-label" for="suggest3">3</label>
+            </div>
+            <!-- design fashion or interiors -->
+            <h5>Design fashion or interiors</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="interiors" id="interiors0" value="0" checked>
+              <label class="form-check-label" for="interiors0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="interiors" id="interiors1" value="1">
+              <label class="form-check-label" for="interiors1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="interiors" id="interiors2" value="2">
+              <label class="form-check-label" for="interiors2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classA" type="radio" name="interiors" id="interiors3" value="3">
+              <label class="form-check-label" for="interiors3">3</label>
+            </div>
+            <!-- teach, guide or train others -->
+            <h5>Teach, guide or train others</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="teach" id="teach0" value="0" checked>
+              <label class="form-check-label" for="teach0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="teach" id="teach1" value="1">
+              <label class="form-check-label" for="teach1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="teach" id="teach2" value="2">
+              <label class="form-check-label" for="teach2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="teach" id="teach3" value="">
+              <label class="form-check-label" for="teach3">3</label>
+            </div>
+            <!-- be in a crowd of people -->
+            <h5>Be in a crowd of people</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="people" id="people0" value="0" checked>
+              <label class="form-check-label" for="people0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="people" id="people1" value="1">
+              <label class="form-check-label" for="people1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="people" id="people2" value="2">
+              <label class="form-check-label" for="people2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="people" id="people3" value="3">
+              <label class="form-check-label" for="people3">3</label>
+            </div>
+            <!-- help people with their problems -->
+            <h5>Help people with their problems</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="help" id="help0" value="0" checked>
+              <label class="form-check-label" for="help0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="help" id="help1" value="1">
+              <label class="form-check-label" for="help1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="help" id="help2" value="2">
+              <label class="form-check-label" for="help2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="help" id="help3" value="3">
+              <label class="form-check-label" for="help3">3</label>
+            </div>
+            <!-- cooperate well in a group -->
+            <h5>Cooperate well in a group</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="cooperate" id="cooperate0" value="0" checked>
+              <label class="form-check-label" for="cooperate0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="cooperate" id="cooperate1" value="1">
+              <label class="form-check-label" for="cooperate1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="cooperate" id="cooperate2" value="2">
+              <label class="form-check-label" for="cooperate2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="cooperate" id="cooperate3" value="3">
+              <label class="form-check-label" for="cooperate3">3</label>
+            </div>
+            <!-- perfomed to the utmost in a team -->
+            <h5>Perfomed to the utmost in a team</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="utmost" id="utmost0" value="0" checked>
+              <label class="form-check-label" for="utmost0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="utmost" id="utmost1" value="1">
+              <label class="form-check-label" for="utmost1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="utmost" id="utmost2" value="2">
+              <label class="form-check-label" for="utmost2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="utmost" id="utmost3" value="3">
+              <label class="form-check-label" for="utmost3">3</label>
+            </div>
+            <!-- mediate disputes arguments -->
+            <h5>Mediate disputes arguments</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="disputes" id="disputes0" value="0" checked>
+              <label class="form-check-label" for="disputes0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="disputes" id="disputes1" value="1">
+              <label class="form-check-label" for="disputes1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="disputes" id="disputes2" value="2">
+              <label class="form-check-label" for="disputes2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classS" type="radio" name="disputes" id="disputes3" value="3">
+              <label class="form-check-label" for="disputes3">3</label>
+            </div>
+            <!-- join forum or debate -->
+            <h5>Join forum or debate</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="debate" id="debate0" value="0" checked>
+              <label class="form-check-label" for="debate0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="debate" id="debate1" value="1">
+              <label class="form-check-label" for="debate1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="debate" id="debate2" value="2">
+              <label class="form-check-label" for="debate2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="debate" id="debate3" value="3">
+              <label class="form-check-label" for="debate3">3</label>
+            </div>
+            <!-- divide tasks very well -->
+            <h5>Divide tasks very wel</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="divide" id="divide0" value="0" checked>
+              <label class="form-check-label" for="divide0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="divide" id="divide1" value="1">
+              <label class="form-check-label" for="divide1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="divide" id="divide2" value="2">
+              <label class="form-check-label" for="divide2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="divide" id="divide3" value="3">
+              <label class="form-check-label" for="divide3">3</label>
+            </div>
+            <!-- manage a team -->
+            <h5>Manage a team</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="manage" id="manage0" value="0" checked>
+              <label class="form-check-label" for="manage0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="manage" id="manage1" value="1">
+              <label class="form-check-label" for="manage">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="manage" id="manage2" value="2">
+              <label class="form-check-label" for="manage2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="manage" id="manage3" value="3">
+              <label class="form-check-label" for="manage3">3</label>
+            </div>
+            <!-- give speeches spontaneously -->
+            <h5>Give speeches spontaneously</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="speeches" id="speeches0" value="0" checked>
+              <label class="form-check-label" for="speeches0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="speeches" id="speeches1" value="1">
+              <label class="form-check-label" for="speeches1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="speeches" id="speeches2" value="2">
+              <label class="form-check-label" for="speeches2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="speeches" id="speeches3" value="3">
+              <label class="form-check-label" for="speeches3">3</label>
+            </div>
+            <!-- organize activities or events -->
+            <h5>Organize activities or events</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="activities" id="activities0" value="0" checked>
+              <label class="form-check-label" for="activities0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="activities" id="activities1" value="1">
+              <label class="form-check-label" for="activities1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="activities" id="activities2" value="2">
+              <label class="form-check-label" for="activities2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="activities" id="activities3" value="3">
+              <label class="form-check-label" for="activities3">3</label>
+            </div>
+            <!-- lead a club or a society -->
+            <h5>Lead a club or a society</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="society" id="society0" value="0" checked>
+              <label class="form-check-label" for="society0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="society" id="society1" value="1">
+              <label class="form-check-label" for="society1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="society" id="society2" value="2">
+              <label class="form-check-label" for="society2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classE" type="radio" name="society" id="society3" value="3">
+              <label class="form-check-label" for="society3">3</label>
+            </div>
+            <!-- work nicely under authorities -->
+            <h5>Work nicely under authorities</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="authorities" id="authorities0" value="0" checked>
+              <label class="form-check-label" for="authorities0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="authorities" id="authorities1" value="1">
+              <label class="form-check-label" for="authorities1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="authorities" id="authorities2" value="2">
+              <label class="form-check-label" for="authorities2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="authorities" id="authorities3" value="3">
+              <label class="form-check-label" for="authorities3">3</label>
+            </div>
+            <!-- keep accurate figures -->
+            <h5>Keep accurate figures</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="figures" id="figures0" value="0" checked>
+              <label class="form-check-label" for="figures0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="figures" id="figures1" value="1">
+              <label class="form-check-label" for="figures1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="figures" id="figures2" value="2">
+              <label class="form-check-label" for="figures2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="figures" id="figures3" value="3">
+              <label class="form-check-label" for="figures3">3</label>
+            </div>
+            <!-- write reports and letters well -->
+            <h5>Write reports and letters well</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="letters" id="letters0" value="0" checked>
+              <label class="form-check-label" for="letters0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="letters" id="letters1" value="1">
+              <label class="form-check-label" for="letters1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="letters" id="letters2" value="2">
+              <label class="form-check-label" for="letters2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="letters" id="letters3" value="3">
+              <label class="form-check-label" for="letters3">3</label>
+            </div>
+            <!-- organize a system -->
+            <h5>Organize a system</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="system" id="system0" value="0" checked>
+              <label class="form-check-label" for="system0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="system" id="system1" value="1">
+              <label class="form-check-label" for="system1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="system" id="system2" value="2">
+              <label class="form-check-label" for="system2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="system" id="system3" value="3">
+              <label class="form-check-label" for="system3">3</label>
+            </div>
+            <!-- report or present data -->
+            <h5>Report or present data</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="data" id="data0" value="0" checked>
+              <label class="form-check-label" for="data0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="data" id="data1" value="1">
+              <label class="form-check-label" for="data1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="data" id="data2" value="2">
+              <label class="form-check-label" for="data2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="data" id="data3" value="3">
+              <label class="form-check-label" for="data3">3</label>
+            </div>
+            <!-- follow up task submission -->
+            <h5>Follow up task submission</h5>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="submission" id="submission0" value="0" checked>
+              <label class="form-check-label" for="submission0">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="submission" id="submission1" value="1">
+              <label class="form-check-label" for="submission1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="submission" id="submission2" value="2">
+              <label class="form-check-label" for="submission2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input classC" type="radio" name="submission" id="submission3" value="3">
+              <label class="form-check-label" for="submission3">3</label>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="pt-5">
+        <div class="alert alert-warning text-center" role="alert">
+          Look at each of the picture, and choose which best describes what you think
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 add-scroll colorful-corner text-center">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <img src="/static/rose.jpg" alt="..." class="fixed-image img-thumbnail">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 color-font">
+              <div class="form-check pt-5">
+                <input class="form-check-input classR" type="radio" name="rose" id="rose0" value="1" checked>
+                <label class="form-check-label" for="rose0">
+                I would like to touch the flower
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classI" type="radio" name="rose" id="rose1" value="1">
+                <label class="form-check-label" for="rose1">
+                This flower named Rose
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classA" type="radio" name="rose" id="rose2" value="1">
+                <label class="form-check-label" for="rose2">
+                Aww... It's beautiful
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classS" type="radio" name="rose" id="rose3" value="1">
+                <label class="form-check-label" for="rose3">
+                I thought of someone when looking at this flower
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classE" type="radio" name="rose" id="rose4" value="1">
+                <label class="form-check-label" for="rose4">
+                I'd like to know if this flower was planted in a garden
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classC" type="radio" name="rose" id="rose2" value="1">
+                <label class="form-check-label" for="rose2">
+                It has six leaves with numbers of petals
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-5">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <img src="/static/bmw.jpg" alt="..." class="fixed-image img-thumbnail">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 color-font">
+              <div class="form-check pt-5">
+                <input class="form-check-input classR" type="radio" name="bmw" id="bmw0" value="1" checked>
+                <label class="form-check-label" for="bmw0">
+                I just want to have a car
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classI" type="radio" name="bmw" id="bmw1" value="1">
+                <label class="form-check-label" for="bmw1">
+                I like Mercedes because the quality if very good
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classA" type="radio" name="bmw" id="bmw2" value="1">
+                <label class="form-check-label" for="bmw2">
+                I love the shape and design of this car
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classS" type="radio" name="bmw" id="bmw3" value="1">
+                <label class="form-check-label" for="bmw3">
+                I can buy this for my wife / I want my husband to ride on this car
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classE" type="radio" name="bmw" id="bmw4" value="1">
+                <label class="form-check-label" for="bmw4">
+                I know this series of Mercedes competes with BMW latest car
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classC" type="radio" name="bmw" id="bmw5" value="1">
+                <label class="form-check-label" for="bmw5">
+                I think we can still count few numbers of this car on road
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-5">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <img src="/static/baby.jpg" alt="..." class="fixed-image img-thumbnail">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 color-font">
+              <div class="form-check pt-5">
+                <input class="form-check-input classR" type="radio" name="baby" id="baby0" value="1" checked>
+                <label class="form-check-label" for="baby0">
+                I really want to squeeze his cheek
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classI" type="radio" name="baby" id="baby1" value="1">
+                <label class="form-check-label" for="baby1">
+                “Sweetheart, daddy/mommy here”
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classA" type="radio" name="baby" id="baby2" value="1">
+                <label class="form-check-label" for="baby2">
+                He looks so cute with the towel on top
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classS" type="radio" name="baby" id="baby3" value="1">
+                <label class="form-check-label" for="baby3">
+                This is my son, I love him
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classE" type="radio" name="baby" id="baby4" value="1">
+                <label class="form-check-label" for="baby4">
+                “Man, I want you to become someone in the future!”
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classC" type="radio" name="baby" id="baby5" value="1">
+                <label class="form-check-label" for="baby5">
+                I did so many things to raise him up
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-5">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <img src="/static/road.jpg" alt="..." class="fixed-image img-thumbnail">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 color-font">
+              <div class="form-check pt-5">
+                <input class="form-check-input classR" type="radio" name="road" id="road0" value="1" checked>
+                <label class="form-check-label" for="road0">
+                The roadways were smooth all the way along the lake
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classI" type="radio" name="road" id="road1" value="1">
+                <label class="form-check-label" for="road1">
+                I learnt to appreciate life
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classA" type="radio" name="road" id="road2" value="1">
+                <label class="form-check-label" for="road2">
+                What a beautiful view!
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classS" type="radio" name="road" id="road3" value="1">
+                <label class="form-check-label" for="road3">
+                I wish I’m not alone
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classE" type="radio" name="road" id="road4" value="1">
+                <label class="form-check-label" for="road4">
+                We should benefit this landscape with tourism place
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classC" type="radio" name="road" id="road5" value="1">
+                <label class="form-check-label" for="road5">
+                It has been a long journey to go this far
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-5">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <img src="/static/house.jpg" alt="..." class="fixed-image img-thumbnail">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 color-font">
+              <div class="form-check pt-5">
+                <input class="form-check-input classR" type="radio" name="house" id="house0" value="1" checked>
+                <label class="form-check-label" for="house0">
+                I like the structure design of the house
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classI" type="radio" name="house" id="house1" value="1">
+                <label class="form-check-label" for="house1">
+                I wonder how there is a room on the 2nd floor
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classA" type="radio" name="house" id="house2" value="1">
+                <label class="form-check-label" for="house2">
+                This house landscape is wonderful!
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classS" type="radio" name="house" id="house3" value="1">
+                <label class="form-check-label" for="house3">
+                My family members would love to live here
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classE" type="radio" name="house" id="house4" value="1">
+                <label class="form-check-label" for="house4">
+                I might get a lot of money if I’d sell this house
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classC" type="radio" name="house" id="house5" value="1">
+                <label class="form-check-label" for="house5">
+                “We have to maintain this house clean and tidy”
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-5 pb-5">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <img src="/static/football.jpg" alt="..." class="fixed-image img-thumbnail">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 color-font">
+              <div class="form-check pt-5">
+                <input class="form-check-input classR" type="radio" name="football" id="football0" value="1" checked>
+                <label class="form-check-label" for="football0">
+                This kid in front blocked my view
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classI" type="radio" name="football" id="football1" value="1">
+                <label class="form-check-label" for="football1">
+                Now I know how is it like to be in a stadium
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classA" type="radio" name="football" id="football2" value="1">
+                <label class="form-check-label" for="football2">
+                Everyone should wear the club jersey colour
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classS" type="radio" name="football" id="football3" value="1">
+                <label class="form-check-label" for="football3">
+                Wow! Fans and audiences. Everyone is here
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classE" type="radio" name="football" id="football4" value="1">
+                <label class="form-check-label" for="football4">
+                We have to win this game!
+                </label>
+              </div>
+              <div class="form-check pt-5">
+                <input class="form-check-input classC" type="radio" name="football" id="football5" value="1">
+                <label class="form-check-label" for="football5">
+                I want to see the statistics of these teams
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-5">
+          <button type="submit" class="btn btn-success btn-lg btn-block" onclick="calculate()">Submit</button>
+      </div>
+    </div>
+    <!-- script file -->
+    <script>
+      function calculate(){
+
+      // initialize variables
+      var inputFirstName = document.getElementById('inputFirstName').value;
+      var inputLastName = document.getElementById('inputLastName').value;
+      var inputAge = document.getElementById('inputAge').value;
+      var inputGender = document.getElementById('inputGender').value;
+      var inputPS = document.getElementById('inputPS').value;
+      var inputEmail = document.getElementById('inputEmail').value;
+
+      if(inputFirstName=="" || inputLastName == "" || inputAge == "" || inputGender == "" || inputPS == "" || inputEmail == ""){
+          alert('Please.. fill up the blank fields');
+          event.preventDefault();
+      }
+
+
+      var classR;
+      var totalR = 0;
+
+      var classI;
+      var totalI = 0;
+
+      var classA;
+      var totalA = 0;
+
+      var classS;
+      var totalS = 0;
+
+      var classE;
+      var totalE = 0;
+
+      var classC;
+      var totalC = 0;
+
+      var hollandCode = {};
+
+      var userData = {};
+
+      classR = $('input[type=radio].classR:checked');
+      $(classR).each(function(i){
+          totalR += parseInt($(this).val());
+      });
+
+
+      classI = $('input[type=radio].classI:checked');
+      $(classI).each(function(i){
+          totalI += parseInt($(this).val());
+      });
+
+
+      classA = $('input[type=radio].classA:checked');
+      $(classA).each(function(i){
+          totalA += parseInt($(this).val());
+      });
+
+
+      classS = $('input[type=radio].classS:checked');
+      $(classS).each(function(i){
+          totalS += parseInt($(this).val());
+      });
+
+      classE = $('input[type=radio].classE:checked');
+      $(classE).each(function(i){
+          totalE += parseInt($(this).val());
+      });
+
+      classC = $('input[type=radio].classC:checked');
+      $(classC).each(function(i){
+          totalC += parseInt($(this).val());
+      });
+
+      var hollandDict = {'R':totalR, 'I':totalI , 'A':totalA, 'S':totalS, 'E':totalE, 'C':totalC};
+      var userDataDict = {'first_name':inputFirstName, 'last_name':inputLastName, 'age':inputAge, 'gender':inputGender, 'ps':inputPS, 'email':inputEmail};
+      var dataArray = [];
+
+      for (var key in hollandDict){
+          if (hollandDict.hasOwnProperty(key)){
+              dataArray.push([key, hollandDict[key]])
+          }
+      }
+
+      for (var key in userDataDict){
+          if (userDataDict.hasOwnProperty(key)){
+              dataArray.push([key, userDataDict[key]])
+          }
+      }
+
+      window.location.href = 'success/'+dataArray;
+      };
+
+    </script>
+  </body>
+</html>
